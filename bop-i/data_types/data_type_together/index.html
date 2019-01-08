@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Show the stuff!</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+    <script src="main.js" async=false></script>
+    <script src="sketch.js" async=false></script>
+
+  </head>
+
+  <body>
+    <div id="container">
+        <p>Function:</p>
+          <div class="custom-select" style="width:200px;" onclick="checkFunction()">
+            <select id="function">
+              <option value="0" selected disabled>Select a function</option>
+              <option value="1">Square</option>
+              <option value="2">Capitalize</option>
+              <option value="3">Evaluate</option>
+            </select>
+          </div>
+        <button id="transmit" type="button" name="transmit" onclick="checkInputs()" style="width:288px;">Transmit!</button>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

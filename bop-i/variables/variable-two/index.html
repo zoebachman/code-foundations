@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="script.js"></script>
+    <title></title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="side-bar">
+        <p class="var-name" id="terrain_1">Terrain One:</p>
+        <input class="box" id="input_1" type="text" onfocus="this.value=''" name="one-value" value="one">
+        <p class="var-name">Terrain Two:</p>
+        <input class="box" id="input_2" type="text" onfocus="this.value=''" name="two-value" value="two">
+        <p class="var-name">Terrain Three:</p>
+        <input class="box" id="input_3" type="text" onfocus="this.value=''" name="three-value" value="three">
+              <div id='empty-div'></div>
+      </div>
+
+
+
+      <div class="game-board">
+        <!-- row one -->
+        <div class="rectangle one-value" id="one"><p>terrain one</p></div>
+        <div class="rectangle two-value" id="two"><p>terrain two</p></div>
+        <div class="rectangle one-value" id="three"><p>terrain one</p></div>
+
+        <!-- row two -->
+        <div class="rectangle three-value" id="four"><p>terrain three</p></div>
+        <div class="rectangle two-value" id="five"><p>terrain two</p></div>
+        <div class="rectangle three-value" id="six"><p>terrain three</p></div>
+        <!-- row three -->
+        <div class="rectangle two-value" id="seven"><p>terrain two</p></div>
+        <div class="rectangle one-value" id="eight"><p>terrain one</p></div>
+        <div class="rectangle two-value" id="nine"><p>terrain two</p></div>
+      </div>
+    </div>
+  </body>
+</html>

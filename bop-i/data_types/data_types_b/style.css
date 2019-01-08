@@ -1,0 +1,56 @@
+html, body {
+  margin: 100;
+  padding: 100;
+/*   background-color: '#003366'; */
+
+}
+canvas {
+  display: block;
+}
+
+.dropdown{
+  /* -webkit-appearance: none; */
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+  font-family: Oxygen;
+  font-size: 12px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  color: #fa4359;
+  padding: 12.5px 22px 12.5px 72px;
+  border-radius: 20px;
+  background-color: #ffffff;
+}
+
+
+#text {
+  font-family: Oxygen;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.2px;
+  color: #000000;
+}
+
+#transmitButton{
+  border-radius: 4px;
+  background-color: #fa4359;
+  border-color: #fa4359;
+  font-family: Oxygen;
+  font-size: 20px;
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: 0.3px;
+  text-align: center;
+  padding: 15px 100px 15px 100px;
+  color: #ffffff;
+}

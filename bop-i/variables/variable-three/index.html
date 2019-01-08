@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+    <title></title>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="side-bar">
+
+        <div id='container'>
+        <p class="var-name">Terrain One:</p>
+
+        <div class="custom-select" style="width:200px;" name="one-value">
+        <select id="myselect" onfocus="this.value=''">
+          <option value="0" selected disabled>Select Terrain</option>
+          <option value="1">grass</option>
+          <option value="2">forest</option>
+          <option value="3">rocks</option>
+          <option value="4">lake</option>
+          <option value="5">beach</option>
+          <option value="6">town</option>
+          <option value="7">glacier</option>
+          <option value="8">desert</option>
+          <option value="9">moon</option>
+        </select>
+      </div>
+    </div>
+
+        <p class="var-name">Terrain Two:</p>
+        <div class="custom-select" style="width:200px;" name="two-value">
+        <select id="myselect2" onfocus="this.value=''">
+          <option value="0" selected disabled>Select Terrain</option>
+          <option value="1">grass</option>
+          <option value="2">forest</option>
+          <option value="3">rocks</option>
+          <option value="4">lake</option>
+          <option value="5">beach</option>
+          <option value="6">town</option>
+          <option value="7">glacier</option>
+          <option value="8">desert</option>
+          <option value="9">moon</option>
+        </select>
+      </div>
+
+        <p class="var-name">Terrain Three:</p>
+        <div class="custom-select" style="width:200px;" name="three-value"> <!-- onclick="checkFunction()">-->
+        <select id="myselect3" onfocus="this.value=''">
+          <option value="0" selected disabled>Select Terrain</option>
+          <option value="1">grass</option>
+          <option value="2">forest</option>
+          <option value="3">rocks</option>
+          <option value="4">lake</option>
+          <option value="5">beach</option>
+          <option value="6">town</option>
+          <option value="7">glacier</option>
+          <option value="8">desert</option>
+          <option value="9">moon</option>
+        </select>
+      </div>
+
+      <div id='empty-div'></div>
+      </div>
+
+      <div class="game-board">
+        <!-- row one -->
+        <div class="rectangle one-value" id="one"><p>terrain one</p></div>
+        <div class="rectangle two-value" id="two"><p>terrain two</p></div>
+        <div class="rectangle one-value" id="three"><p>terrain one</p></div>
+
+        <!-- row two -->
+        <div class="rectangle three-value" id="four"><p>terrain three</p></div>
+        <div class="rectangle two-value" id="five"><p>terrain two</p></div>
+        <div class="rectangle three-value" id="six"><p>terrain three</p></div>
+        <!-- row three -->
+        <div class="rectangle two-value" id="seven"><p>terrain two</p></div>
+        <div class="rectangle one-value" id="eight"><p>terrain one</p></div>
+        <div class="rectangle two-value" id="nine"><p>terrain two</p></div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

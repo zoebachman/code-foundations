@@ -1,0 +1,17 @@
+index.html has the html structure
+style.css has the styling
+sketch.js has the main logic
+main.js has the user information
+
+sketch.js has to get the user information from main.js and
+- render the correct number of fruit (so, apple changes from 1 to 3 and 2 oranges appear)
+- [show whether or not a comparison/logical statement is correct - via checkmark] - not structure
+
+so, rather than a button calling the addFruit function
+it needs to check the value of the variables apple and orange on run
+and render the correct number that's associated
+
+
+
+
+also going to take out Nick's code until logic is correct, then add it back in

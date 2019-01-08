@@ -1,0 +1,13 @@
+html, body {
+  margin: 100;
+  padding: 100;
+/*   background-color: '#003366'; */
+
+}
+canvas {
+  display: block;
+}
+
+select {
+  font-size: 14px;
+}
