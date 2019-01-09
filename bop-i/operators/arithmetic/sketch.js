@@ -6,6 +6,7 @@ var font;
 var buttons = [];
 var mainButton, resetButton, selectThick, selectThin, selectThickDiv, selectThinDiv;
 var errorButton;
+// var sel;
 
 
 var constants = {
@@ -90,47 +91,15 @@ function setup() {
   buttons.push(resetButton);
 
 
-  // // Add select elements
-  // selectThickDiv = createDiv();
-  // selectThick = createSelect();
-  // selectThick.option('burger patty');
-  // selectThick.option('ham');
-  // selectThick.option('peanut butter');
 
-  // selectThick.parent(selectThickDiv);
-  // selectThickDiv.position(
-  //   width/2 - (selectThick.width) - (0.5 * wUnit),
-  //   buttons[0].y + buttons[0].h + (0.5 * hUnit));
-  // selectThick.changed(() => buttons[2].text = `Add ${selectThick.value()}`);
+  // Position select element
+  selDiv = select('.custom-select');
+  sel = select('#number');
 
-  // selectThinDiv = createDiv();
-  // selectThin = createSelect();
-  // selectThin.option('pickles');
-  // selectThin.option('cheese');
-  // selectThin.option('jelly');
-  // selectThin.parent(selectThinDiv);
-  // selectThinDiv.position(
-  //   width/2 + (0.5 * wUnit),
-  //   buttons[0].y + buttons[0].h + (0.5 * hUnit));
-  // selectThin.changed(() => buttons[3].text = `Add ${selectThin.value()}`);
-
-
+  selDiv.position
+    (width/2 - (sel.width) - (0.5 * wUnit), buttons[0].y + buttons[0].h + (0.5 * hUnit));
 
   backdrop();
-
-  // start with one apple
-  newApple = new Apple();
-  newApple.x = width/2;
-  newApple.y = height/2 + (6*hUnit);
-  appleList.push(newApple);
-  renderApples();
-  displayNumbers();
-
-  // drop down
-  // dropDown();
-  var myNumber = getValue();
-
-
 }
 
 function backdrop() {
@@ -189,12 +158,14 @@ function draw(){
     imageMode(CORNER);
 
     cursor( isOnButton ? HAND : ARROW )
+
+
 }
 
 
 // button functionality
 function mousePressed(){
-  // Add or subtract apple
+
 buttons.forEach((elem) => {
   if (elem.underMouse()) {
     let match;
@@ -237,12 +208,13 @@ function getValue() {
 }
 
 function addApple(number) {
+  backdrop();
   number = numberChoice;
 
   for (var i = 0; i < number; i++){
   newApple = new Apple();
-  newApple.x = xPosition + random(-20,20);
-  newApple.y = yPosition + random(-20,20);
+  newApple.x = width/2 + random(-width/2, width/2);
+  newApple.y = height/2 - random(-height/4, -height/8);
 
   // add to array
   appleList.push(newApple);
@@ -251,19 +223,27 @@ function addApple(number) {
   renderApples();
   }
 
-  return text(appleList, " + ", number);
+  // return text(appleList, " + ", number);
+  displayNumbers();
+  // calc = text((appleList.length - 1) + " + 1 = " + appleList.length, width/2, height/2 - (2.5 * hUnit));
+
 }
 
 function subtractApple(number) {
+  backdrop();
   number = numberChoice;
 
   for (var i = 0; i < number; i++){
   appleList.pop();
   renderApples();
   }
+  displayNumbers();
+  // text((appleList.length + 1) + " - 1 = " + appleList.length, width/2, height/2 - (2.5 * hUnit));
+
 }
 
 function multiplyApple(number) {
+  backdrop();
   number = numberChoice;
 
   var multiplied = (appleList.length * number) - appleList.length;
@@ -271,8 +251,8 @@ function multiplyApple(number) {
   for (var i = 0; i < multiplied; i++){
 
   newApple = new Apple();
-  newApple.x = xPosition + random(-20,20);
-  newApple.y = yPosition + random(-20,20);
+  newApple.x = width/2 + random(-width/2, width/2);
+  newApple.y = height/2 - random(-height/4, -height/8);
 
   // add to array
   appleList.push(newApple);
@@ -280,9 +260,11 @@ function multiplyApple(number) {
 	// display new array
   renderApples();
   }
+  displayNumbers();
 }
 
 function divideApple(number) {
+  backdrop();
   var numApples = appleList.length;
   console.log("num apples", numApples);
 
@@ -294,8 +276,12 @@ function divideApple(number) {
 
   for (var i = 0; i < outOfArray; i++){
     appleList.pop();
-    renderApples();
+
   }
+  renderApples();
+  displayNumbers();
+  // text((appleList.length / numberChoice) + " / " + numberChoice " = " + appleList.length, width/2, height/2 - (2.5 * hUnit));
+
 }
 
 function renderApples() {
@@ -313,8 +299,6 @@ function displayNumbers(){
   textStyle(BOLD);
   textSize(24);
   var numText = text("Number of Apples: " + appleList.length, width/2, height/2 - (6.5 * hUnit));
-  console.log(numText.x)
-  console.log(width/2)
 
 // change it back to normal (because for some reason it won't otherwise:
   textFont('Oxygen');

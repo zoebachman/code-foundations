@@ -88,33 +88,6 @@ function setup() {
     constants.resetButtonD*hUnit, constants.resetButtonD*hUnit, ' ', 'circ');
   buttons.push(resetButton);
 
-
-  // // Add select elements
-  // selectThickDiv = createDiv();
-  // selectThick = createSelect();
-  // selectThick.option('burger patty');
-  // selectThick.option('ham');
-  // selectThick.option('peanut butter');
-
-  // selectThick.parent(selectThickDiv);
-  // selectThickDiv.position(
-  //   width/2 - (selectThick.width) - (0.5 * wUnit),
-  //   buttons[0].y + buttons[0].h + (0.5 * hUnit));
-  // selectThick.changed(() => buttons[2].text = `Add ${selectThick.value()}`);
-
-  // selectThinDiv = createDiv();
-  // selectThin = createSelect();
-  // selectThin.option('pickles');
-  // selectThin.option('cheese');
-  // selectThin.option('jelly');
-  // selectThin.parent(selectThinDiv);
-  // selectThinDiv.position(
-  //   width/2 + (0.5 * wUnit),
-  //   buttons[0].y + buttons[0].h + (0.5 * hUnit));
-  // selectThin.changed(() => buttons[3].text = `Add ${selectThin.value()}`);
-
-
-
   backdrop();
 
   // start with one apple - maybe not, seems to screw up the text
