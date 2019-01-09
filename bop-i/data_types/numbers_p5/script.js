@@ -1,4 +1,5 @@
-var sheet = document.createElement('style'),
+// this goes with the SASS slider stuff
+
   $rangeInput = $('.range input'),
   prefs = ['webkit-slider-runnable-track', 'moz-range-track', 'ms-track'];
 
