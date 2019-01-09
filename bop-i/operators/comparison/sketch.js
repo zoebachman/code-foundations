@@ -315,8 +315,8 @@ function fruitSceneThree(){
   // draw a certain number of oranges
   for (var i=0; i < 2; i++){
     newOrange = new Orange();
-    newOrange.x += random(width/2, width-(2.5*wUnit));
-    newOrange.y += height/2 - random(-height/4, -height/8);
+    newOrange.x = random(width/2, width-(2.5*wUnit));
+    newOrange.y = height/2 - random(-height/4, -height/8);
 
     // add to array
     orangeList.push(newOrange);
