@@ -4,28 +4,40 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.sound.min.js"></script>
+    <script src="classes.js"></script>
     <link rel="stylesheet" type="text/css" href="style.css">
     <meta charset="utf-8" />
 
   </head>
   <body>
-    <div>
-      <div><h1>Recipe 1: Balanced Fruit Salad</<h1>
-        <p>A recipe that calls for the same number of apples and oranges</p>
-      </div>
-      <div id="container">
-        <p id="apple-text"> (has <b>3</b> apples)</p>
-          <div class="custom-select" style="width:200px;" onclick="getOperatorValue()">
-            <select id="number">
-              <option value="AND"> select operator </option>
-              <option value="<"> < </option>
-              <option value=">"> > </option>
-              <option value="==="> === </option>
-            </select>
-        <p id="orange-text"> (has <b>3</b> oranges)</p>
-          </div>
-    </div>
+    <div id="container">
+        <div class="custom-select" id='dd-1' style="width:140px;" onclick="checkAnswer()">
+          <select id="number-1">
+            <option value="0"> select one </option>
+            <option value="<"> < </option>
+            <option value=">"> > </option>
+            <option value="=="> == </option>
+          </select>
+        </div>
 
+      <div class="custom-select" id='dd-2'style="width:140px;" onclick="checkAnswer()" display: inline>
+        <select id="number-2">
+          <option value="0"> select one </option>
+          <option value="<"> < </option>
+          <option value=">"> > </option>
+          <option value="=="> == </option>
+        </select>
+      </div>
+
+    <div class="custom-select" id='dd-3' style="width:140px;" onclick="checkAnswer()">
+      <select id="number-3">
+        <option value="0"> select one </option>
+        <option value="<"> < </option>
+        <option value=">"> > </option>
+        <option value="=="> == </option>
+      </select>
+    </div>
+</div>
     <script src="script.js"></script>
     <script src="sketch.js"></script>
   </body>

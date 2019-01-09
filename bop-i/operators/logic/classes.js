@@ -23,7 +23,7 @@ class Orange {
 }
 
 class Button {
-  constructor(x, y, w, h, text, shape, color, colorHover, colorClick, colorClicked) {
+  constructor(x, y, w, h, text, shape, color, colorHover, colorClick) {
     this.x = x || 0;
     this.y = y || 0;
     this.w = w || 50;
@@ -32,8 +32,7 @@ class Button {
     this.shape = shape || 'rect';
     this.color = color || '#fa4359';
     this.colorHover = colorHover || '#D52E42';
-    // this.colorClick = colorClick || '#B1192B';
-    this.colorClicked = colorClicked || 'yellow';
+    this.colorClick = colorClick || '#B1192B';
   }
 
   underMouse() {

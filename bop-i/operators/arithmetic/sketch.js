@@ -6,6 +6,9 @@ var font;
 var buttons = [];
 var mainButton, resetButton, selectThick, selectThin, selectThickDiv, selectThinDiv;
 var errorButton;
+
+var calcChoice;
+var calcList = [0];
 // var sel;
 
 
@@ -70,19 +73,22 @@ function setup() {
 
   // Add main buttons
   addButton = new Button( width/2 - (constants.fnButtonW/2)*wUnit - (7.5 * wUnit), 2 * hUnit,
-  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Add!');
+  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Add');
 
   subtractButton = new Button( width/2 - (constants.fnButtonW/2)*wUnit - (2.5 * wUnit), 2 * hUnit,
-  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Subtract!');
+  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Subtract');
 
   multiplyButton = new Button( width/2 - (constants.fnButtonW/2)*wUnit + (2.5 * wUnit), 2 * hUnit,
-  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Multiply!');
+  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Multiply');
 
   divideButton = new Button( width/2 - (constants.fnButtonW/2)*wUnit + (7.5 * wUnit), 2 * hUnit,
-  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Divide!');
+  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Divide');
+
+  calculateButton = new Button( width/2  - (2.3 * wUnit), 9 * hUnit,
+  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Calculate!');
 
 
-  buttons.push(addButton, subtractButton, multiplyButton, divideButton);
+  buttons.push(addButton, subtractButton, multiplyButton, divideButton, calculateButton);
   // buttons.push(subtractButton);
 
   // Add reset button
@@ -97,7 +103,7 @@ function setup() {
   sel = select('#number');
 
   selDiv.position
-    (width/2 - (sel.width) - (0.5 * wUnit), buttons[0].y + buttons[0].h + (0.5 * hUnit));
+    (width/2 - (sel.width) - (2.5 * wUnit), buttons[0].y + buttons[0].h + (2.5 * hUnit));
 
   backdrop();
 }
@@ -124,13 +130,11 @@ function backdrop() {
   fill(hillOne.color);
   ellipse(hillOne.x, hillOne.y, hillOne.w, hillOne.h);
   ellipse(hillTwo.x, hillTwo.y, hillTwo.w, hillTwo.h);
-
- ellipseMode(CORNER);
+  ellipseMode(CORNER);
 
 }
 
 function draw(){
-
     // clear apples if reset is pushed
     if (appleList.length == 0){
       backdrop();
@@ -159,9 +163,17 @@ function draw(){
 
     cursor( isOnButton ? HAND : ARROW )
 
+    // display symbol for calculation
+      // if (calcChoice == undefined){
+      //   console.log('what')
+      // } else if (numberChoice == undefined) {
+      //   text(appleList.length - numberChoice + " " + symbol, width/2, height/2)
+      //
+      // } else {
+      //   text(appleList.length - numberChoice + " " + symbol + " " + numberChoice + " = " + appleList.length, width/2, height/2)
+      // }
 
 }
-
 
 // button functionality
 function mousePressed(){
@@ -171,20 +183,32 @@ buttons.forEach((elem) => {
     let match;
     switch (elem.text) {
       // Main cases - grabbing button text to determine case
-      case 'Add!':
-        addApple();
+      case 'Add':
+        console.log(calcChoice)
+        calcChoice = 'Add';
+        symbol = '+';
       break;
 
-      case 'Subtract!':
-        subtractApple();
+      case 'Subtract':
+        calcChoice = 'Subtract';
+        symbol = '-';
+        console.log(calcChoice)
       break;
 
-      case 'Multiply!':
-        multiplyApple();
+      case 'Multiply':
+        calcChoice = 'Multiply';
+        symbol = '*';
+        console.log(calcChoice)
       break;
 
-      case 'Divide!':
-        divideApple();
+      case 'Divide':
+        calcChoice = 'Divide';
+        symbol = '/';
+        console.log(calcChoice)
+      break;
+
+      case 'Calculate!':
+        makeCalculation();
       break;
 
       default:
@@ -193,6 +217,9 @@ buttons.forEach((elem) => {
         console.log(appleList)
     }
   }
+  fill('white')
+
+  return calcChoice;
 });
 
 }
@@ -208,6 +235,7 @@ function getValue() {
 }
 
 function addApple(number) {
+  console.log('add');
   backdrop();
   number = numberChoice;
 
@@ -225,11 +253,16 @@ function addApple(number) {
 
   // return text(appleList, " + ", number);
   displayNumbers();
-  // calc = text((appleList.length - 1) + " + 1 = " + appleList.length, width/2, height/2 - (2.5 * hUnit));
+
+  //add final calculation to list for next time
+  // calcList.push(appleList.length)
+  // console.log(calcList)
+  // text(calcList.slice(-2)[0] + " " + symbol + " " + numberChoice + " = " + appleList.length, width/2, height/2)
 
 }
 
 function subtractApple(number) {
+  console.log('subtract');
   backdrop();
   number = numberChoice;
 
@@ -238,11 +271,16 @@ function subtractApple(number) {
   renderApples();
   }
   displayNumbers();
-  // text((appleList.length + 1) + " - 1 = " + appleList.length, width/2, height/2 - (2.5 * hUnit));
+
+  //add final calculation to list for next time
+  // calcList.push(appleList.length)
+  // console.log(calcList)
+  // text(calcList.slice(-2)[0] + " " + symbol + " " + numberChoice + " = " + appleList.length, width/2, height/2)
 
 }
 
 function multiplyApple(number) {
+  console.log('multiply');
   backdrop();
   number = numberChoice;
 
@@ -261,9 +299,16 @@ function multiplyApple(number) {
   renderApples();
   }
   displayNumbers();
+
+  //add final calculation to list for next time
+  // calcList.push(appleList.length)
+  // console.log(calcList)
+  // text(calcList.slice(-2)[0] + " " + symbol + " " + numberChoice + " = " + appleList.length, width/2, height/2)
+
 }
 
 function divideApple(number) {
+  console.log('divide');
   backdrop();
   var numApples = appleList.length;
   console.log("num apples", numApples);
@@ -280,12 +325,38 @@ function divideApple(number) {
   }
   renderApples();
   displayNumbers();
-  // text((appleList.length / numberChoice) + " / " + numberChoice " = " + appleList.length, width/2, height/2 - (2.5 * hUnit));
+
+  //add final calculation to list for next time
+  calcList.push(appleList.length)
+  console.log(calcList)
+  text(calcList.slice(-2)[0] + " " + symbol + " " + numberChoice + " = " + appleList.length, width/2, height/2)
 
 }
 
-function renderApples() {
+function makeCalculation() {
 
+  switch (calcChoice) {
+    // Main cases - grabbing button text to determine case
+    case 'Add':
+      addApple();
+    break;
+
+    case 'Subtract':
+      subtractApple();
+    break;
+
+    case 'Multiply':
+      multiplyApple();
+    break;
+
+    case 'Divide':
+      divideApple();
+    break;
+  }
+}
+
+
+function renderApples() {
   for(var i = 0; i < appleList.length; i++) {
     var myApple = appleList[i];
     //console.log(myApple);
@@ -312,3 +383,10 @@ function checkAnswer(){
     console.log("win!");
   }
 }
+
+
+// $(document).ready(function() {
+//   $('#btn1').bind('click', function(event) {
+//     $('#btn1').css('background-color', 'yellow');
+//   })
+// })
