@@ -6,9 +6,6 @@ body {
   font-size: 14px;
 }
 
-select {cursor: pointer; width: 8rem; font-family: 'Oxygen'; font-size:14px; color: #fa4359; -webkit-text-fill-color: #fa4359; }
-option {width: 8rem; font-family: 'Oxygen';font-size:14;color: #fa4359;}
-
 button {
   width: 100px;
   height: 53px;

@@ -1,3 +1,12 @@
+body {
+  font-family: 'Oxygen';
+  padding: 0;
+  margin: 0;
+  font-family: 'Oxygen';
+  font-size: 14px;
+}
+
+
 .slidecontainer {
   display: inline-block;
   /* width: 100%; *//* Width of the outside container */
@@ -9,8 +18,8 @@
   appearance: none;
   width: 100%; /* Full-width */
   height: 7px;
-  border-radius: 5px;
-  background: #fa4359; /* Grey background */
+  border-radius: 6.5px;
+  background: #fa4359; /* red background */
   outline: none; /* Remove outline */
   opacity: 1; /* Set transparency (for mouse-over effects on hover) */
   -webkit-transition: .2s; /* 0.2 seconds transition on hover */
@@ -25,13 +34,13 @@
   width: 13px; /* Set a specific slider handle width */
   height: 13px; /* Slider handle height */
   border-radius: 50%;
-  background: #ffffff; /* Green background */
+  background: #ffffff; /* white background */
   cursor: pointer; /* Cursor on hover */
 }
 
 .slider::-moz-range-thumb {
   width: 13px; /* Set a specific slider handle width */
   height: 13px; /* Slider handle height */
-  background: #ffffff; /* Green background */
+  background: #ffffff; /* white  sbackground */
   cursor: pointer; /* Cursor on hover */
 }
