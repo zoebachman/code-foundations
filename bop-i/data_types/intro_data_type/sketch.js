@@ -36,7 +36,7 @@ function setup() {
   const imageWidth = constants.imageW*(wUnit*.028)
   const imageHeight = constants.imageH*(wUnit*.028)
 
-  bgImage = {x: 0, y: hUnit*2.5,
+  bgImage = {x: 0, y: (hUnit*2),
     w: imageWidth, h: imageHeight};
 
   image(bg, bgImage.x, bgImage.y, bgImage.w, bgImage.h);
