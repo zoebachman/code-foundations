@@ -1,12 +1,14 @@
 html, body {
-  margin: 100;
-  padding: 100;
+  font-family: 'Oxygen';
+  padding: 0;
+  margin: 0;
   margin-left: 0;
 }
+
 canvas {
   display: block;
   background-color: #e85b49;
-  margin-top: 3rem;
+  margin-top: 1rem;
 }
 
 p {
@@ -136,7 +138,7 @@ p {
   line-height: normal;
   letter-spacing: 0.3px;
   text-align: center;
-  padding: 13px 100px 13px 100px;
+  padding: 13px 50px 13px 50px;
   margin-left: 200px;
   color: #ffffff;
 }

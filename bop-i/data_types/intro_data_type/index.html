@@ -3,7 +3,7 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Show the stuff!</title>
+    <title>Data Types!</title>
   <link rel="stylesheet" type="text/css" href="style.css">
     <script src="http://code.jquery.com/jquery-latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.min.js"></script>
@@ -16,7 +16,7 @@
   <body>
     <div id="container">
         <p>Function:</p>
-          <div class="custom-select" style="width:200px;" onclick="checkFunction()">
+          <div class="custom-select" id="sel" style="width:190px;" onclick="checkFunction()">
             <select id="function">
               <option value="0" selected disabled>Select a function</option>
               <option value="1">Square</option>
@@ -26,7 +26,7 @@
           </div>
 
         <p>Input:</p>
-          <div class="custom-select" style="width:200px;" onclick="checkData()">
+          <div class="custom-select" id = "sel2" style="width:190px;" onclick="checkData()">
             <select id="value">
               <option value="0" selected disabled>Select a value</option>
               <option data-type="string" value="1">kangaroo</option>

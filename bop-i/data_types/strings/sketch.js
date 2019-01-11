@@ -7,10 +7,13 @@
 // go through a sequence of colors
 
 var input; //, button, greeting;
-var img;
+var bg;
 var stringHeight = -240;
 var characters;
 var flag = [];
+
+var wUnit;
+var hUnit;
 
 // flag colors
 var blue = [157, 192, 249];
@@ -20,13 +23,39 @@ var yellow = [249, 236, 157];
 var colors = [blue, pink, green, yellow];
 var colorCount = 0; // how to keep track of colors used
 
+var constants = {
+  inputW: 6.5,
+  inputH: 2,
+  imageW: 1214,
+  imageH: 866,
+  screenX: 670,
+  screenY: 310,
+  textSize: 18
+};
+
+function preload(){
+  bg = loadImage('https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/strings/Party.png');
+
+}
+
+
 function setup() {
   createCanvas(windowWidth, windowHeight); //should figure out how to change this to variable width
   background("#ef95ef");
   textAlign(CENTER);
   textSize(50);
 
-  img = loadImage('https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/strings/Party.png');
+  wUnit = windowWidth / 36;
+  hUnit = windowHeight / 36;
+
+  const imageWidth = constants.imageW*(wUnit*.03)
+  const imageHeight = constants.imageH*(wUnit*.028)
+
+  bgImage = {x: 0, y: 0,
+    w: imageWidth, h: imageHeight};
+
+
+
   input = createInput('');
   input.position(width/2-200, 65);
   input.id('stringInput')
@@ -35,7 +64,8 @@ function setup() {
 
 function draw() {
   background("#ef95ef");
-  image(img, 50, 0);
+  // image(img, 50, 0);
+  image(bg, bgImage.x, bgImage.y, bgImage.w, bgImage.h);
   drawFlags();
 }
 
