@@ -79,7 +79,6 @@ function checkFunction(){
   reloadThis();
 
   fill('#7ed321');
-
   myTextSize = constants.textSize * (.05 * wUnit)
   textSize(myTextSize);
   textStyle(BOLD);
@@ -272,8 +271,7 @@ function smileyFace() {
     noStroke();
     var squareSize = constants.squareSize * (.096 * wUnit);
 
-    // var x = 690;
-    // var y = 300;
+
 
     // starting points
     x = constants.screenX * (.028 * wUnit)
@@ -287,14 +285,7 @@ function smileyFace() {
     // right eye
     rect(x+(xDistance * 5), y, squareSize, squareSize);
 
-    // smile
-    // rect(x, y+40, squareSize, squareSize);
-    // rect(x+12, y+50, squareSize, squareSize);
-    // rect(x+24, y+60, squareSize, squareSize);
-    // rect(x+36, y+60, squareSize, squareSize);
-    // rect(x+48, y+60, squareSize, squareSize);
-    // rect(x+60, y+50, squareSize, squareSize);
-    // rect(x+72, y+40, squareSize, squareSize);
+
 
     rect(x, y+(yDistance * 4), squareSize, squareSize);
     rect(x+(xDistance), y+(yDistance * 5), squareSize, squareSize);
@@ -304,6 +295,18 @@ function smileyFace() {
     rect(x+(xDistance * 5), y+(yDistance * 5), squareSize, squareSize);
     rect(x+(xDistance * 6), y+(yDistance * 4), squareSize, squareSize);
 
+    // var x = 690;
+    // var y = 300;
+
+
+    // smile
+    // rect(x, y+40, squareSize, squareSize);
+    // rect(x+12, y+50, squareSize, squareSize);
+    // rect(x+24, y+60, squareSize, squareSize);
+    // rect(x+36, y+60, squareSize, squareSize);
+    // rect(x+48, y+60, squareSize, squareSize);
+    // rect(x+60, y+50, squareSize, squareSize);
+    // rect(x+72, y+40, squareSize, squareSize);
 
 // multiply by 12 , but 12 is what we need to change (n = 12)
 //     x + n * 0

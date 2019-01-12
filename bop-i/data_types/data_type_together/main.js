@@ -1,5 +1,5 @@
 myNumber = 150;
 
-myString = "hello";
+myString = 'hello';
 
 myBool = true;

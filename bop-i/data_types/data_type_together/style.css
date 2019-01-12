@@ -12,7 +12,7 @@ canvas {
 
 p {
   display:inline;
-  padding-left: 6em;
+  /* padding-left: 6em; */
   font-family: Oxygen;
   font-size: 20px;
   font-weight: bold;
@@ -25,8 +25,9 @@ p {
 
 
 #container {
-  position: relative;
+  /* position: relative; */
   padding-top: 25px;
+  text-align: center;
 }
 
 /*the container must be positioned relative:*/
@@ -126,6 +127,7 @@ p {
 }
 
 #transmit{
+  /* display: block; */
   border-radius: 4px;
   background-color: #fa4359;
   border-color: #fa4359;
@@ -136,9 +138,9 @@ p {
   font-stretch: normal;
   line-height: normal;
   letter-spacing: 0.3px;
-  text-align: center;
+  /* text-align: center; */
   padding: 13px 100px 13px 100px;
-  margin-left: 6em;
+  /* margin-left: 6em; */
   margin-top: 0.5em;
   color: #ffffff;
 }
