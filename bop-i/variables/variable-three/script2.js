@@ -13,18 +13,42 @@ $(document).ready(function(){
 
   // run the code every time a dropdown is clicked
   $("div.custom-select").click(function(){
-
-    // this is a helpful way to dynamically get the ID of first child of a selected div
-    // var theID = $(this).children("select").first().attr("id");
-
     // get the value that the user selected and store it a variable
-    var inputValue = $(this).find(":selected").text();
-
+    var inputValue = $( "#myselect option:selected" ).text();
+    // var inputValue = this.value;
+    console.log(inputValue);
     // make that input all uppercase to make our check later easier, who knows how the user will type
     var upperCase = inputValue.toUpperCase();
     // console.log(upperCase);
     // get the value of the name attribute of the input tag that the user is typing in
     // we'll use this value to replace the background image on the corresponding box
+    var nameToPass = $(this).attr("name");
+
+    // after we have all the pertinent information, we send it to our checkTheInput function
+    checkTheInput(upperCase, nameToPass);
+
+  });
+
+
+  $("div.custom-select").click(function(){
+    var inputValue = $( "#myselect2 option:selected" ).text();
+    var upperCase = inputValue.toUpperCase();
+    // console.log(upperCase);
+
+    var nameToPass = $(this).attr("name");
+
+    // after we have all the pertinent information, we send it to our checkTheInput function
+    checkTheInput(upperCase, nameToPass);
+
+  });
+
+  $("div.custom-select").click(function(){
+    var inputValue = $( "#myselect3 option:selected" ).text();
+
+    // make that input all uppercase to make our check later easier, who knows how the user will type
+    var upperCase = inputValue.toUpperCase();
+    // console.log(upperCase);
+
     var nameToPass = $(this).attr("name");
 
     // after we have all the pertinent information, we send it to our checkTheInput function
