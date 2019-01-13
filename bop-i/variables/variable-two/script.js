@@ -4,9 +4,18 @@ $(document).ready(function(){
   var GRASS = 'https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Grass.png';
   var ROCKS = 'https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Rocks.png';
   var FOREST = 'https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Forest.png';
+  var inputBox = $("input.box");
+
+// change color of input text when typing
+  inputBox.focus(function(){
+    // console.log( this );
+    $("input.box:focus").css({
+      color : "black"
+    });
+  });
 
   // run the code every time a key is let up on the html element input with class of box
-  $("input.box").keyup(function(){
+  inputBox.keyup(function(){
     // get the value that the user typed and store it a variable
     var inputValue = this.value;
     // make that input all uppercase to make our check later easier, who knows how the user will type

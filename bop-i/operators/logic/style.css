@@ -1,8 +1,14 @@
 body {
   font-family: 'Oxygen';
-  /* -webkit-filter: blur(50px);
-filter: blur(50px);
-background-color: #ffc462; */
+  padding: 0;
+  margin: 0;
+  font-size: 14px;
+}
+
+.card {
+  background-color:  #ffffff;
+  border-radius: 4px;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.5);
 }
 
  p {

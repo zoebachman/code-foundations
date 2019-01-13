@@ -5,8 +5,18 @@ $(document).ready(function(){
   var ROCKS = 'https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Rocks.png';
   var FOREST = 'https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Forest.png';
 
+  var inputBox = $("input.box");
+
+// change color of input text when typing
+  inputBox.focus(function(){
+    // console.log( this );
+    $("input.box:focus").css({
+      color : "black"
+    });
+  });
+
   // run the code every time a key is let up on the html element input with class of box
-  $("input.box").keyup(function(){
+  inputBox.keyup(function(){
     // get the value that the user typed and store it a variable
 
     // $("input").css("color", "#000000");
@@ -17,10 +27,9 @@ $(document).ready(function(){
     // get the value of the name attribute of the input tag that the user is typing in
     // we'll use this value to replace the background image on the corresponding box
     var nameToPass = $(this).attr("name");
-
     var inputID = $(this).attr("id");
+    // console.log( this )
 
-    $(inputID).css("color", "#000000");
     // the original values in the name attribute all of -value, so we have to chop that shit off
     // because the ids of the divs that we're replacing the background image for don't have that
     // for example, 'one-value' becomes 'one' and then we can make a variable using that 'one'
@@ -33,8 +42,7 @@ $(document).ready(function(){
 
 
 
-
-  function checkTheInput ( userValue, usableID ) {
+  function checkTheInput (userValue, usableID) {
 
     // this is where we create the jquery variable using the id we created/pulled from the name attribute
     var boxToUpdate = $("div#" + usableID);

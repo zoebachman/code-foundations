@@ -85,8 +85,7 @@ function setup() {
   constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Divide');
 
   calculateButton = new Button( width/2  - (2.3 * wUnit), 9 * hUnit,
-  constants.fnButtonW * wUnit, constants.fnButtonH * hUnit, 'Calculate!');
-
+  constants.fnButtonW + (4.5) * wUnit, constants.fnButtonH * hUnit, 'Calculate!');
 
   buttons.push(addButton, subtractButton, multiplyButton, divideButton, calculateButton);
   // buttons.push(subtractButton);
@@ -96,14 +95,15 @@ function setup() {
     constants.resetButtonD*hUnit, constants.resetButtonD*hUnit, ' ', 'circ');
   buttons.push(resetButton);
 
-
-
-  // Position select element
+  // Size and Position select element
   selDiv = select('.custom-select');
   sel = select('#number');
+  dropdownWidth = constants.selectW*(1.40*wUnit)
+  widthValue = dropdownWidth.toString();
+  selDiv.style('width', widthValue +'px');
 
   selDiv.position
-    (width/2 - (sel.width) - (2.5 * wUnit), buttons[0].y + buttons[0].h + (2.5 * hUnit));
+    (width/2 - (sel.width) - (3.5 * wUnit), calculateButton.y - (4 * hUnit));
 
   backdrop();
 }
@@ -369,7 +369,7 @@ function displayNumbers(){
   textFont('Oxygen');
   textStyle(BOLD);
   textSize(24);
-  var numText = text("Number of Apples: " + appleList.length, width/2, height/2 - (6.5 * hUnit));
+  var numText = text("Number of Apples: " + appleList.length, width/2, height/2 - (1.5 * hUnit));
 
 // change it back to normal (because for some reason it won't otherwise:
   textFont('Oxygen');

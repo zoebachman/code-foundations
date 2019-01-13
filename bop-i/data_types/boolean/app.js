@@ -1,3 +1,26 @@
+var bg;
+
+var constants = {
+  regButtonW: 6.5,
+  regButtonH: 2,
+  selectW: 5,
+  selectH: 1.5,
+  imageW: 1214,
+  imageH: 753,
+  screenX: 670,
+  screenY: 310,
+  squareSize: 5,
+  textSize: 18
+};
+
+
+var wUnit;
+var hUnit;
+
+function preload(){
+  bg = loadImage('https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/data-types/Computer.png')
+}
+
 $(document).ready(function(){
 
   var offBulb = "https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/boolean/lightsoff.png";
@@ -41,6 +64,7 @@ $(document).ready(function(){
       $moon.removeClass("up");
       $moon.addClass("down");
       $background.attr("background", offBulb);
+      // $background.attr("background-color", "#000000");
       // $celestialObject.attr("src", sun);
     } else {
       $par.text("Lights On == True");
@@ -51,6 +75,7 @@ $(document).ready(function(){
       $moon.removeClass("down");
       $moon.addClass("up");
       $background.attr("background", onBulb);
+      // $background.attr("background-color", "#e85b49");
       // $celestialObject.attr("src", moon);
     }
   });

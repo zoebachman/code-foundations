@@ -42,10 +42,15 @@ function setup() {
   image(bg, bgImage.x, bgImage.y, bgImage.w, bgImage.h);
 
   //dynamically style width of dropdowns << not sure if necessary
-  // selDiv = select('#sel')
-  // var dropdownWidth = constants.selectW*(1.20*wUnit)
-  // var widthValue = dropdownWidth.toString();
-  // selDiv.style('width', widthValue +'px');
+  selDiv = select('#sel')
+  var dropdownWidth = constants.selectW*(1.40*wUnit)
+  var widthValue = dropdownWidth.toString();
+  selDiv.style('width', widthValue +'px');
+
+  sel2Div = select('#sel2')
+  var dropdownWidth2 = constants.selectW*(1.40*wUnit)
+  var widthValue2 = dropdownWidth2.toString();
+  sel2Div.style('width', widthValue2 +'px');
 
   //dynamically style button width
  transmitButton = select('#transmit');
@@ -54,7 +59,7 @@ function setup() {
  transmitButton.style('width', widthValue +'px');
 
 //dynamically style left margin of regButtonH
-var buttonMarginLeft = constants.selectW*(.75*wUnit)
+var buttonMarginLeft = constants.selectW*(.5*wUnit)
 var marginLeftValue = buttonMarginLeft.toString();
 transmitButton.style('margin-left', marginLeftValue +'px');
 
