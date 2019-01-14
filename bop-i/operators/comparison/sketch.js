@@ -117,10 +117,6 @@ function backdrop() {
   ellipse(hillTwo.x, hillTwo.y, hillTwo.w, hillTwo.h);
   ellipseMode(CORNER);
 
-
-
-
-
   cardOne();
   cardTwo();
   cardThree();
@@ -128,10 +124,9 @@ function backdrop() {
 
 
 function cardOne() {
+  noStroke();
   fill('white');
-
   rect((2.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit));
-
   fill('black');
   textStyle(BOLD);
   textAlign(CENTER);
@@ -147,9 +142,11 @@ function cardOne() {
   textDropDown = select('#dd-1');
   textDropDown.position((4*wUnit), 10*hUnit);
   text('3 Oranges', (6.75*wUnit), 14.5*hUnit)
+  // noStroke();
 }
 
 function cardTwo() {
+  noStroke();
   fill('white')
   rect(width/2 - (4.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit))
 
@@ -218,6 +215,7 @@ function draw() {
 
 
 function fruitSceneOne(){
+
   (console.log('scene one'))
   backdrop();
   // draw a certain number of apples
@@ -244,6 +242,31 @@ function fruitSceneOne(){
     renderFruits();
     console.log('apple = ' + appleList.length)
     console.log('orange = ' + orangeList.length)
+
+// draw yellow line on card one
+
+    stroke(255, 204, 0);
+    strokeWeight(4);
+    fill('white');
+    rect((2.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit));
+    noStroke();
+    fill('black');
+    textStyle(BOLD);
+    textAlign(CENTER);
+    text('Recipe 1: \nBalanced Fruit Salad', (6.75*wUnit), 3*hUnit)
+
+    push();
+    textStyle(NORMAL);
+    textSize(14);
+    text('A recipe that calls for \nthe same number of fruit', (6.75*wUnit), 6.5*hUnit)
+    pop();
+
+    text('3 Apples', (6.75*wUnit), 9.5*hUnit)
+    textDropDown = select('#dd-1');
+    textDropDown.position((4*wUnit), 10*hUnit);
+    text('3 Oranges', (6.75*wUnit), 14.5*hUnit)
+
+
 }
 
 function fruitSceneTwo(){
@@ -253,6 +276,7 @@ function fruitSceneTwo(){
   (console.log('scene two'))
   backdrop();
 
+// correct card one marker
   push();
   fill('#37c3be');
   image(checkmark, (4.5*wUnit), 15.75*hUnit);
@@ -284,6 +308,30 @@ function fruitSceneTwo(){
   renderFruits();
   console.log('apple = ' + appleList.length)
   console.log('orange = ' + orangeList.length)
+
+
+  // CARD TWO ON
+  // draw yellow line
+      stroke(255, 204, 0);
+      strokeWeight(4);
+      fill('white')
+      rect(width/2 - (4.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit))
+
+      noStroke();
+      fill('black');
+      textStyle(BOLD);
+      text('Recipe 2: \n Citrus Fruit Salad', width/2 - (.35*wUnit), 3*hUnit)
+
+      push();
+      textStyle(NORMAL);
+      textSize(14);
+      text('A recipe that calls for \n3 apples and 5 oranges', width/2 - (.35*wUnit), 6.5*hUnit)
+      pop();
+
+      text('3 Apples', width/2 - (.35*wUnit), 9.5*hUnit)
+      textDropDown = select('#dd-2');
+      textDropDown.position(width/2 - (3*wUnit), 10*hUnit);
+      text('5 Oranges', width/2 - (.35*wUnit), 14.5*hUnit)
 }
 
 
@@ -329,6 +377,28 @@ function fruitSceneThree(){
   }
 
     renderFruits();
+
+    // CARD THREE yellow
+    fill('white')
+      stroke(255, 204, 0);
+      strokeWeight(4);
+      rect(width/2 + (6.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit))
+
+  noStroke();
+      fill('black');
+      textStyle(BOLD);
+      text('Recipe 3: \n Sweet Fruit Salad', width/2 + (10.75*wUnit), 3*hUnit)
+
+      push();
+      textStyle(NORMAL);
+      textSize(14);
+      text('A recipe that calls for \n 4 apples and 2 oranges', width/2 + (10.75*wUnit), 6.5*hUnit)
+      pop();
+
+      text('4 Apples', width/2 + (10.75*wUnit), 9.5*hUnit)
+      textDropDown = select('#dd-3');
+      textDropDown.position(width/2 + (8.25*wUnit), 10*hUnit);
+      text('2 Oranges', width/2 + (10.75*wUnit), 14.5*hUnit)
 }
 
 

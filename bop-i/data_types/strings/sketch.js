@@ -56,7 +56,7 @@ function setup() {
 
 
 
-  input = createInput('');
+  input = createInput("String!");
   input.position(width/2-200, 65);
   input.id('stringInput')
   input.style('width:430px; height:40px; font-size:14px; text-align:center;');

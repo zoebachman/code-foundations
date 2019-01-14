@@ -57,7 +57,7 @@ $(document).ready(function(){
     // that's already on?
     // and vice versa... I hope this is enough explanation
     if( $this.hasClass("off") ) {
-      $par.text("Lights On == False");
+      $par.text("LightsOn = False");
       $par2.text("Turn the lights on!");
       $sun.removeClass("down");
       $sun.addClass("up");
@@ -67,7 +67,7 @@ $(document).ready(function(){
       // $background.attr("background-color", "#000000");
       // $celestialObject.attr("src", sun);
     } else {
-      $par.text("Lights On == True");
+      $par.text("LightsOn = True");
       $par2.text("Turn the lights off!");
       // $sun.toggleClass("down");
       $sun.removeClass("up");

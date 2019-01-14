@@ -169,7 +169,6 @@ function cardThree() {
   fill('white')
   rect(width/2 + (6.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit))
 
-
   fill('black');
   textStyle(BOLD);
   text('Recipe 3: \n Fruit Juice', width/2 + (10.75*wUnit), 3*hUnit)
@@ -240,6 +239,30 @@ function fruitSceneOne(){
     renderFruits();
     console.log('apple = ' + appleList.length)
     console.log('orange = ' + orangeList.length)
+
+    // draw yellow line on card one
+
+        stroke(255, 204, 0);
+        strokeWeight(4);
+        fill('white');
+
+        rect((2.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit));
+noStroke();
+        fill('black');
+        textStyle(BOLD);
+        textAlign(CENTER);
+        text('Recipe 1: \nFruit Salad', (6.75*wUnit), 3*hUnit)
+
+        push();
+        textStyle(NORMAL);
+        textSize(14);
+        text('A recipe that includes both \n types of fruit', (6.75*wUnit), 6.5*hUnit)
+        pop();
+
+        text('3 Apples', (6.75*wUnit), 9.5*hUnit)
+        textDropDown = select('#dd-1');
+        textDropDown.position((4*wUnit), 10*hUnit);
+        text('2 Oranges', (6.75*wUnit), 14.5*hUnit)
 }
 
 
@@ -281,6 +304,30 @@ function fruitSceneTwo(){
   renderFruits();
   console.log('apple = ' + appleList.length)
   console.log('orange = ' + orangeList.length)
+
+  // draw yellow line on card two
+
+      stroke(255, 204, 0);
+      strokeWeight(4);
+      fill('white');
+      rect(width/2 - (4.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit))
+
+noStroke();
+      fill('black');
+      textStyle(BOLD);
+      text('Recipe 2: \n Applesauce', width/2 - (.35*wUnit), 3*hUnit)
+
+      push();
+      textStyle(NORMAL);
+      textSize(14);
+      text('A recipe that includes apples', width/2 - (.35*wUnit), 6.5*hUnit)
+      pop();
+
+
+      textDropDown = select('#dd-2');
+      textDropDown.position(width/2 - (3*wUnit), 10*hUnit);
+      text('0 Apples', width/2 - (.35*wUnit), 14.5*hUnit)
+
 }
 
 
@@ -326,6 +373,28 @@ function fruitSceneThree(){
   }
 
     renderFruits();
+
+    // draw yellow line on card three
+
+        stroke(255, 204, 0);
+        strokeWeight(4);
+        fill('white')
+        rect(width/2 + (6.5*wUnit), hUnit, constants.cardW*(.25*wUnit), constants.cardH*(.6*hUnit))
+noStroke();
+        fill('black');
+        textStyle(BOLD);
+        text('Recipe 3: \n Fruit Juice', width/2 + (10.75*wUnit), 3*hUnit)
+
+        push();
+        textStyle(NORMAL);
+        textSize(14);
+        text('A recipe can use \n either fruits', width/2 + (10.75*wUnit), 6.5*hUnit)
+        pop();
+
+        text('4 Apples', width/2 + (10.75*wUnit), 9.5*hUnit)
+        textDropDown = select('#dd-3');
+        textDropDown.position(width/2 + (8.25*wUnit), 10*hUnit);
+        text('4 Oranges', width/2 + (10.75*wUnit), 14.5*hUnit)
 }
 
 

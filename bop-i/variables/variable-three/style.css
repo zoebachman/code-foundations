@@ -238,3 +238,15 @@ p {
   grid-column: 3;
   grid-row: 3;
 }
+
+div.one-value {
+  background-image: url("https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Grass.png");
+}
+
+div.two-value {
+  background-image: url("https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Rocks.png");
+}
+
+div.three-value {
+  background-image: url("https://s3.amazonaws.com/codecademy-content/programs/code-foundations-path/bop-i/variables/assets/Forest.png");
+}
